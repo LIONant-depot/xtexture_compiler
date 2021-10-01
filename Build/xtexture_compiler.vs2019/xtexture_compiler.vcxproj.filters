@@ -1,17 +1,775 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Dependencies">
+      <UniqueIdentifier>{9e3d421f-a3ed-4da7-9a69-dac199b4e5bb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Dependencies\xCore">
+      <UniqueIdentifier>{da01953a-30de-474a-bf6c-60377bdd4bc1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Dependencies\Crunch">
+      <UniqueIdentifier>{258711cc-6048-485a-8d80-0e860e1ef227}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Dependencies\Crunch\Cpp">
+      <UniqueIdentifier>{3bde9eff-05da-4068-8cdc-54c7b542be87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\Crunch\H">
+      <UniqueIdentifier>{12910230-0df0-42d9-81a1-f3b40bf6d182}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Settings">
+      <UniqueIdentifier>{55d40c14-f29f-44e4-94ce-91d2e224e01e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\xBitmapTools">
+      <UniqueIdentifier>{4263a9c5-3166-409c-9d48-116b35e2e739}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\xResourcePipeline">
+      <UniqueIdentifier>{12e1a74a-ce14-46be-91c6-1d2338b209f7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\dependencies\xcore\src\xcore.cpp">
+      <Filter>Dependencies\xCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\xcore\src\xcore_profiler_1.cpp">
+      <Filter>Dependencies\xCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\xcore\src\xcore_profiler_2.cpp">
+      <Filter>Dependencies\xCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_arealist.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_assert.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_checksum.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_colorized_console.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_command_line_params.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_comp.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_console.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_core.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_data_stream.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_dds_comp.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_decomp.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_dxt.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_dxt_endpoint_refiner.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_dxt_fast.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_dxt_hc.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_dxt_hc_common.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_dxt_image.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_dxt1.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_dxt5a.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_dynamic_string.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_etc.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_file_utils.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_find_files.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_hash.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_hash_map.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_huffman_codes.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_image_utils.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_jpgd.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_jpge.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_ktx_texture.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_lzma_codec.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_math.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_mem.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_miniz.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_mipmapped_texture.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_zeng.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_pixel_format.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_platform.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_prefix_coding.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_qdxt1.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_qdxt5.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_rand.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_resample_filters.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_resampler.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_rg_etc1.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_ryg_dxt.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_sparse_bit_array.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_stb_image.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_strutils.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_symbol_codec.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_texture_comp.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_texture_conversion.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_texture_file_types.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_threaded_resampler.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_threading_pthreads.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_threading_win32.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_timer.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_utils.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_value.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crn_vector.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\crnlib.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\lzma_7zBuf.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\lzma_7zBuf2.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\lzma_7zCrc.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\lzma_7zFile.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\lzma_7zStream.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\lzma_Alloc.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\lzma_Bcj2.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\lzma_Bra.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\lzma_Bra86.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\lzma_BraIA64.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\lzma_LzFind.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\lzma_LzFindMt.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\lzma_LzmaDec.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\lzma_LzmaEnc.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\lzma_LzmaLib.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\crunch\crnlib\lzma_Threads.cpp">
+      <Filter>Dependencies\Crunch\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\..\dependencies\xbmp_tools\src\xbmp_tools.cpp">
+      <Filter>Dependencies\xBitmapTools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_compiler_base.cpp">
+      <Filter>Dependencies\xResourcePipeline</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_arglist.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_array.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_assert.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_bitmap.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_bits.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_cmdline.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_color.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_compression.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_context.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_crc.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_endian.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_error.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_event.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_file.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_function.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_global.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_guid.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_lock.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_lockless_pool.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_lockless_queues.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_log.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_math.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_math_matrix4.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_math_quaternion.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_math_radian3.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_math_shapes.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_math_transform.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_math_vector2.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_math_vector3.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_math_vector4.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_memory.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_profiler.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_ptr.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_random.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_rtti.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_scheduler_channel.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_scheduler_job.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_scheduler_system.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_scheduler_trigger.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_serializer.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_span.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_string.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_system_reg.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_target.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_textfile.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_types.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_unique_span.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_units.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_vector.h">
+      <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_arealist.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_assert.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_atomics.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_buffer_stream.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_cfile_stream.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_checksum.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_clusterizer.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_color.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_colorized_console.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_command_line_params.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_comp.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_console.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_core.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_data_stream.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_data_stream_serializer.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_dds_comp.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_dxt.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_dxt_endpoint_refiner.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_dxt_fast.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_dxt_hc.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_dxt_hc_common.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_dxt_image.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_dxt1.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_dxt5a.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_dynamic_stream.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_dynamic_string.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_etc.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_file_utils.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_find_files.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_freeimage_image_utils.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_hash.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_hash_map.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_helpers.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_huffman_codes.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_image.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_image_utils.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_intersect.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_jpgd.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_jpge.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_ktx_texture.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_lzma_codec.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_math.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_matrix.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_mem.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_miniz.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_mipmapped_texture.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_packed_uint.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_platform.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_prefix_coding.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_qdxt1.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_qdxt5.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_radix_sort.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_rand.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_ray.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_rect.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_resample_filters.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_resampler.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_rg_etc1.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_ryg_dxt.hpp">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_ryg_types.hpp">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_sparse_array.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_sparse_bit_array.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_strutils.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_symbol_codec.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_texture_comp.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_texture_conversion.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_texture_file_types.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_threaded_resampler.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_threaded_clusterizer.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_threading.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_threading_null.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_threading_pthreads.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_threading_win32.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_timer.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_traits.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_tree_clusterizer.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_types.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_utils.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_value.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_vec.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_vec_interval.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_vector.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_vector2d.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_winhdr.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_pixel_format.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\crn_zeng.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\lzham_timer.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\lzham_win32_threading.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\lzma_7zBuf.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\lzma_7zCrc.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\lzma_7zFile.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\lzma_7zVersion.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\lzma_Alloc.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\lzma_Bcj2.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\lzma_Bra.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\lzma_CpuArch.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\lzma_LzFind.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\lzma_LzHash.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\lzma_LzFindMt.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\lzma_LzmaDec.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\lzma_LzmaEnc.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\lzma_LzmaLib.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\lzma_Threads.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\lzma_Types.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\crunch\crnlib\lzma_MyVersion.h">
+      <Filter>Dependencies\Crunch\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Settings\PropertyConfig.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Settings\xcore_user_settings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xbmp_tools\src\xbmp_tools.h">
+      <Filter>Dependencies\xBitmapTools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xbmp_tools\src\xbmp_tools_loaders.h">
+      <Filter>Dependencies\xBitmapTools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline.h">
+      <Filter>Dependencies\xResourcePipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_compiler_base.h">
+      <Filter>Dependencies\xResourcePipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_config.h">
+      <Filter>Dependencies\xResourcePipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_descriptor_base.h">
+      <Filter>Dependencies\xResourcePipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_key_base.h">
+      <Filter>Dependencies\xResourcePipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_tag.h">
+      <Filter>Dependencies\xResourcePipeline</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
