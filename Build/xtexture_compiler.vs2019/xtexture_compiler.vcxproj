@@ -1036,8 +1036,7 @@
     <ClInclude Include="..\..\dependencies\crunch\crnlib\lzma_Types.h" />
     <ClInclude Include="..\..\dependencies\xbmp_tools\src\xbmp_tools.h" />
     <ClInclude Include="..\..\dependencies\xbmp_tools\src\xbmp_tools_loaders.h" />
-    <ClInclude Include="..\..\dependencies\xcore\src\Settings\PropertyConfig.h" />
-    <ClInclude Include="..\..\dependencies\xcore\src\Settings\xcore_user_settings.h" />
+    <ClInclude Include="..\..\dependencies\xbmp_tools\src\xbmp_tools_writers.h" />
     <ClInclude Include="..\..\dependencies\xcore\src\xcore.h" />
     <ClInclude Include="..\..\dependencies\xcore\src\xcore_arglist.h" />
     <ClInclude Include="..\..\dependencies\xcore\src\xcore_array.h" />
@@ -1094,6 +1093,8 @@
     <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_descriptor_base.h" />
     <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_key_base.h" />
     <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_tag.h" />
+    <ClInclude Include="Settings\PropertyConfig.h" />
+    <ClInclude Include="Settings\xcore_user_settings.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -741,12 +741,6 @@
     <ClInclude Include="..\..\dependencies\crunch\crnlib\lzma_MyVersion.h">
       <Filter>Dependencies\Crunch\H</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dependencies\xcore\src\Settings\PropertyConfig.h">
-      <Filter>Settings</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dependencies\xcore\src\Settings\xcore_user_settings.h">
-      <Filter>Settings</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dependencies\xbmp_tools\src\xbmp_tools.h">
       <Filter>Dependencies\xBitmapTools</Filter>
     </ClInclude>
@@ -770,6 +764,15 @@
     </ClInclude>
     <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_tag.h">
       <Filter>Dependencies\xResourcePipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xbmp_tools\src\xbmp_tools_writers.h">
+      <Filter>Dependencies\xBitmapTools</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings\PropertyConfig.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings\xcore_user_settings.h">
+      <Filter>Settings</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
