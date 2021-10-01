@@ -251,6 +251,16 @@ struct implementation : instance
     {
         NormalizeSrcTextures();
 
+        // Check if infact is a cube map
+        if (Descriptor.m_Source.m_isCubeMap )
+        {
+            if( m_lSrcBitmaps.size() != 6 )
+            {
+                if(m_lSrcBitmaps.size() > 6 ) throw(std::runtime_error("You specified you wanted a cube map but you added too many images"));
+                else                          throw(std::runtime_error("You specified you wanted a cube map but you added too few images"));
+            }
+        }
+
         if (Descriptor.m_Manipulations.m_PackSrcTexturesAsOne )
         {
             if( m_lSrcBitmaps.size() > 4 ) 
@@ -261,6 +271,7 @@ struct implementation : instance
         CompressBitmaps(Descriptor.m_Quality, Descriptor.m_Source.m_Type);
 
         m_FinalBitmap.setColorSpace( Descriptor.m_Source.m_LinearSpace ? xcore::bitmap::color_space::LINEAR : xcore::bitmap::color_space::SRGB );
+        m_FinalBitmap.setCubemap( Descriptor.m_Source.m_isCubeMap );
     }
 
     //---------------------------------------------------------------------------------------------

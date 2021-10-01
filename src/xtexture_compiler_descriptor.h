@@ -11,10 +11,10 @@ namespace xtexture_compiler
 
         enum class type : std::uint8_t
         { OTHER
-        , COLOR
-        , CHANNEL
-        , NORMAL
-        , INTENSITY
+        , COLOR         // Color 
+        , CHANNEL       // Color Channels MASKs, Should be linear
+        , NORMAL        // DXT5 compress (R,G,A), B set to black, should be linear
+        , INTENSITY     // Things like MASKs (Data expected to be in R) Keep other channels black for better results. Should be linear.
         };
 
         enum class force_compression_format : std::uint8_t
