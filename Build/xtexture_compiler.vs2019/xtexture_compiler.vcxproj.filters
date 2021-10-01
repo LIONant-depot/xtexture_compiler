@@ -25,6 +25,15 @@
     <Filter Include="Dependencies\xResourcePipeline">
       <UniqueIdentifier>{12e1a74a-ce14-46be-91c6-1d2338b209f7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Runtime">
+      <UniqueIdentifier>{04f251d0-1693-4995-b8a3-0ba4d905a755}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Texture_Compiler">
+      <UniqueIdentifier>{065154e9-713d-4cc3-8a15-962f25095379}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Texture_Compiler\Details">
+      <UniqueIdentifier>{7a2bfe8a-73f2-4c9f-90f8-e87e66f53da5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\dependencies\xcore\src\xcore.cpp">
@@ -273,6 +282,12 @@
     </ClCompile>
     <ClCompile Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_compiler_base.cpp">
       <Filter>Dependencies\xResourcePipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\xtexture_compiler.cpp">
+      <Filter>Texture_Compiler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Details\xtexture_compiler_instance.cpp">
+      <Filter>Texture_Compiler\Details</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -773,6 +788,15 @@
     </ClInclude>
     <ClInclude Include="Settings\xcore_user_settings.h">
       <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\xtexture_compiler.h">
+      <Filter>Texture_Compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\xtexture_compiler_descriptor.h">
+      <Filter>Texture_Compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\xtexture_compiler_instance.h">
+      <Filter>Texture_Compiler</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

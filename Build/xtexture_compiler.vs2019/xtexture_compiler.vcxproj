@@ -117,7 +117,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>Settings;../../dependencies/xcore/src;../../dependencies/xbmp_tools;./</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Settings;../../dependencies/xcore/src;../../dependencies/xbmp_tools;../../dependencies/xresource_pipeline/src</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -135,7 +135,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>Settings;../../dependencies/xcore/src;../../dependencies/xbmp_tools;./</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Settings;../../dependencies/xcore/src;../../dependencies/xbmp_tools;../../dependencies/xresource_pipeline/src</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
@@ -926,6 +926,11 @@
       <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">stdcpplatest</LanguageStandard>
     </ClCompile>
     <ClCompile Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_compiler_base.cpp" />
+    <ClCompile Include="..\..\src\Details\xtexture_compiler_instance.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\src\xtexture_compiler.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -1093,6 +1098,9 @@
     <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_descriptor_base.h" />
     <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_key_base.h" />
     <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_tag.h" />
+    <ClInclude Include="..\..\src\xtexture_compiler.h" />
+    <ClInclude Include="..\..\src\xtexture_compiler_descriptor.h" />
+    <ClInclude Include="..\..\src\xtexture_compiler_instance.h" />
     <ClInclude Include="Settings\PropertyConfig.h" />
     <ClInclude Include="Settings\xcore_user_settings.h" />
   </ItemGroup>
