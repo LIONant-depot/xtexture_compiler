@@ -43,6 +43,7 @@ int main( int argc, const char* argv[] )
 
     auto TextureCompilerPipeline = std::make_unique<texture_pipeline_compiler>();
 
+    /*
     if constexpr (false)
     {
         xresource_pipeline::config::info Info
@@ -65,6 +66,7 @@ int main( int argc, const char* argv[] )
         Option.m_Source.m_lPaths.append().m_Color = xcore::string::Fmt("FinalV1.jpg");
         (void)xtexture_compiler::descriptor::Serialize(Option, "ResourceDesc.txt", false);
     }
+    */
 
     //
     // Parse parameters
