@@ -34,6 +34,9 @@
     <Filter Include="Texture_Compiler\Details">
       <UniqueIdentifier>{7a2bfe8a-73f2-4c9f-90f8-e87e66f53da5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Dependencies\xCore\Details">
+      <UniqueIdentifier>{70fb1255-59e7-4f89-ab07-a71a5eb7c4e3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\dependencies\xcore\src\xcore.cpp">
@@ -797,6 +800,81 @@
     </ClInclude>
     <ClInclude Include="..\..\src\xtexture_compiler_instance.h">
       <Filter>Texture_Compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_bitmap_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_cmdline_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_color_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_file_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_linear_buffers_hardness.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_math_bbox_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_math_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_math_irect_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_math_matrix4_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_math_plane_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_math_quaternion_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_math_radian3_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_math_rect_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_math_sphere_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_math_vector2_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_math_vector3_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_math_vector3d_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_math_vector4_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_random_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_scheduler_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_serializer_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_string_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_textfile_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_unqiue_span_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\Implementation\xcore_vector_inline.h">
+      <Filter>Dependencies\xCore\Details</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

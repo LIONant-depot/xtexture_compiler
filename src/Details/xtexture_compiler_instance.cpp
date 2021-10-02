@@ -278,11 +278,11 @@ struct implementation : instance
 
     virtual void Serialize( const std::string_view FilePath ) override
     {
-    
-    
-    
+        if( auto Err = m_FinalBitmap.SerializeSave( xcore::string::To<wchar_t>(FilePath), false ); Err )
+            throw( std::runtime_error(Err.getCode().m_pString));
     }
 
+    //---------------------------------------------------------------------------------------------
 
     struct src_bitmaps
     {
