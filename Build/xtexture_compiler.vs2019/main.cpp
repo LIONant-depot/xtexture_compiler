@@ -20,7 +20,9 @@ struct texture_pipeline_compiler : xresource_pipeline::compiler::base
             return Err;
 
         m_Compiler->LoadImages( m_AssetsRootPath, m_CompilerOptions );
-        m_Compiler->Compile(m_CompilerOptions);
+        m_Compiler->Compile( m_CompilerOptions
+                           , xresource_pipeline::compiler::base::m_OptimizationType 
+                           );
         for (auto& T : m_Target)
         {
             if (T.m_bValid) m_Compiler->Serialize(T.m_DataPath.data());

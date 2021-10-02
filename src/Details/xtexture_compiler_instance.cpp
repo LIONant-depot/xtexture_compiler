@@ -182,7 +182,7 @@ struct implementation : instance
 
     //---------------------------------------------------------------------------------------------
 
-    void CompressBitmaps( const descriptor::quality& CompressionOpt, const descriptor::type Type )
+    void CompressBitmaps( const descriptor::quality& CompressionOpt, const descriptor::type Type, xresource_pipeline::compiler::base::optimization_type Optimization)
     {
         if( CompressionOpt.m_Compression == descriptor::compression::DONT_COMPRESS )
         {
@@ -200,11 +200,11 @@ struct implementation : instance
                                                     ? crn_format::cCRNFmtDXT1
                                                     : crn_format::cCRNFmtDXT3
                                                 : cCRNFmtDXT1;
-        Params.m_dxt_quality            = CompressionOpt.m_Compression == descriptor::compression::LEVEL_1 
+        Params.m_dxt_quality            = Optimization == xresource_pipeline::compiler::base::optimization_type::O0
                                             ? crn_dxt_quality::cCRNDXTQualityFast
-                                            : CompressionOpt.m_Compression == descriptor::compression::LEVEL_2
+                                            : Optimization == xresource_pipeline::compiler::base::optimization_type::O1
                                                 ? crn_dxt_quality::cCRNDXTQualityBetter
-                                                : CompressionOpt.m_Compression == descriptor::compression::LEVEL_Z 
+                                                : Optimization == xresource_pipeline::compiler::base::optimization_type::Oz
                                                     ? crn_dxt_quality::cCRNDXTQualityUber
                                                     : crn_dxt_quality::cCRNDXTQualityFast;
 
@@ -255,7 +255,7 @@ struct implementation : instance
 
     //---------------------------------------------------------------------------------------------
 
-    virtual void Compile( const descriptor& Descriptor ) override
+    virtual void Compile( const descriptor& Descriptor, xresource_pipeline::compiler::base::optimization_type Optimization) override
     {
         NormalizeSrcTextures();
 
@@ -276,7 +276,7 @@ struct implementation : instance
             PackTextures();
         }
 
-        CompressBitmaps(Descriptor.m_Quality, Descriptor.m_Source.m_Type);
+        CompressBitmaps(Descriptor.m_Quality, Descriptor.m_Source.m_Type, Optimization );
 
         m_FinalBitmap.setColorSpace( Descriptor.m_Source.m_LinearSpace ? xcore::bitmap::color_space::LINEAR : xcore::bitmap::color_space::SRGB );
         m_FinalBitmap.setCubemap( Descriptor.m_Source.m_isCubeMap );
