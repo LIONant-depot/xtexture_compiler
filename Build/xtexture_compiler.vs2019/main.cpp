@@ -2,7 +2,7 @@
 
 //---------------------------------------------------------------------------------
 
-struct geom_pipeline_compiler : xresource_pipeline::compiler::base
+struct texture_pipeline_compiler : xresource_pipeline::compiler::base
 {
     static constexpr xcore::guid::rcfull<> full_guid_v
     { .m_Type = xcore::guid::rctype<>         { "resource.pipeline", "plugin" }
@@ -16,8 +16,8 @@ struct geom_pipeline_compiler : xresource_pipeline::compiler::base
 
     virtual xcore::err onCompile(void) noexcept override
     {
-        //if (auto Err = xtexture_compiler::descriptor::Serialize(m_CompilerOptions, m_ResourceDescriptorPathFile.data(), true); Err)
-        //    return Err;
+        if (auto Err = xtexture_compiler::descriptor::Serialize(m_CompilerOptions, m_ResourceDescriptorPathFile.data(), true); Err)
+            return Err;
 
         m_Compiler->LoadImages( m_AssetsRootPath, m_CompilerOptions );
         m_Compiler->Compile(m_CompilerOptions);
@@ -25,6 +25,7 @@ struct geom_pipeline_compiler : xresource_pipeline::compiler::base
         {
             if (T.m_bValid) m_Compiler->Serialize(T.m_DataPath.data());
         }
+
         return {};
     }
 
@@ -38,12 +39,35 @@ int main( int argc, const char* argv[] )
 {
     xcore::Init("xtexture_compiler");
 
-    auto GeomCompilerPipeline = std::make_unique<geom_pipeline_compiler>();
+    auto TextureCompilerPipeline = std::make_unique<texture_pipeline_compiler>();
+
+    if constexpr (false)
+    {
+        xresource_pipeline::config::info Info
+        { .m_RootAssetsPath = "x64/Assets"
+        };
+        Info.m_ResourceTypes.push_back
+        (xresource_pipeline::config::resource_type
+            { .m_FullGuid                = texture_pipeline_compiler::full_guid_v
+            , .m_ResourceTypeName        = "xtexture"
+            , .m_bDefaultSettingInEditor = true
+            });
+
+        (void)xresource_pipeline::config::Serialize(Info, "ResourcePipeline.config", false);
+    }
+
+    if constexpr (true)
+    {
+        xtexture_compiler::descriptor Option;
+
+        Option.m_Source.m_lPaths.append().m_Color = xcore::string::Fmt("FinalV1.jpg");
+        (void)xtexture_compiler::descriptor::Serialize(Option, "ResourceDesc.txt", false);
+    }
 
     //
     // Parse parameters
     //
-    if( auto Err = GeomCompilerPipeline->Parse( argc, argv ); Err )
+    if( auto Err = TextureCompilerPipeline->Parse( argc, argv ); Err )
     {
         printf( "%s\nERROR: Fail to compile\n", Err.getCode().m_pString );
         return -1;
@@ -52,7 +76,7 @@ int main( int argc, const char* argv[] )
     //
     // Start compilation
     //
-    if( auto Err = GeomCompilerPipeline->Compile(); Err )
+    if( auto Err = TextureCompilerPipeline->Compile(); Err )
     {
         printf("%s\nERROR: Fail to compile(2)\n", Err.getCode().m_pString);
         return -1;

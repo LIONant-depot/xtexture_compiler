@@ -13,7 +13,7 @@ struct implementation : instance
 
     void LoadTexture( xcore::bitmap& Bitmap, const xcore::cstring& FilePath )
     {
-        if( xcore::string::FindStrI( FilePath, ".dds" ) != 0 )
+        if( xcore::string::FindStrI( FilePath, ".dds" ) == 0 )
         {
             if( auto Err = xbmp::tools::loader::LoadDSS( Bitmap, FilePath ); Err )
                 throw( std::runtime_error( xbmp::tools::getErrorMsg(Err) ) );
@@ -37,9 +37,9 @@ struct implementation : instance
             auto& Bitmap = m_lSrcBitmaps.append();
             bool  bRead  = false;
 
-            if (SrcPath.m_Alpha.empty() == false)
+            if (SrcPath.m_Color.empty() == false)
             {
-                LoadTexture(Bitmap.m_SrcAlpha, xcore::string::Fmt("%s/%s", AssetPath.data(), SrcPath.m_Color.data()));
+                LoadTexture(Bitmap.m_SrcBitmap, xcore::string::Fmt("%s/%s", AssetPath.data(), SrcPath.m_Color.data()));
                 bRead = true;
             }
 
@@ -62,7 +62,7 @@ struct implementation : instance
     {
         if( Bitmap.getFormat() == xcore::bitmap::format::R8G8B8A8 ) return;
 
-        if( Bitmap.getFormat() != xcore::bitmap::format::R8G8B8 || Bitmap.getFormat() != xcore::bitmap::format::R5G6B5 )
+        if( Bitmap.getFormat() != xcore::bitmap::format::R8G8B8 && Bitmap.getFormat() != xcore::bitmap::format::R5G6B5 )
             throw(std::runtime_error("Source texture has a strange format"));
 
         auto        ColorFmt        = xcore::color::format{ static_cast<xcore::color::format::type>(Bitmap.getFormat()) };
@@ -91,8 +91,8 @@ struct implementation : instance
         ( Bitmap.getWidth()
         , Bitmap.getHeight()
         , xcore::bitmap::format::R8G8B8A8
-        , Bitmap.getHeight() * Bitmap.getWidth() * 4
-        , { reinterpret_cast<std::byte*>(Data.get()), 1 + Bitmap.getHeight() * Bitmap.getWidth() }
+        , sizeof(xcore::icolor) * (Bitmap.getHeight() * Bitmap.getWidth())
+        , { reinterpret_cast<std::byte*>(Data.release()), sizeof(xcore::icolor) * (1 + Bitmap.getHeight() * Bitmap.getWidth()) }
         , true
         , 1
         , 1
@@ -107,12 +107,12 @@ struct implementation : instance
         // Make sure that all textures are the same size
         //
         {
-            std::uint32_t W = m_lSrcBitmaps[0].m_SrcBitmap.getWidth();
-            std::uint32_t H = m_lSrcBitmaps[0].m_SrcBitmap.getHeight();
+            const auto W = m_lSrcBitmaps[0].m_SrcBitmap.getWidth();
+            const auto H = m_lSrcBitmaps[0].m_SrcBitmap.getHeight();
 
             for (auto& SrcBitmap : m_lSrcBitmaps)
             {
-                if( W != SrcBitmap.m_SrcAlpha.getWidth() || H != SrcBitmap.m_SrcAlpha.getHeight() )
+                if( W != SrcBitmap.m_SrcBitmap.getWidth() || H != SrcBitmap.m_SrcBitmap.getHeight() )
                     throw(std::runtime_error("All color input textures should be the same size"));
 
                 if( SrcBitmap.m_SrcAlpha.getFormat() != xcore::bitmap::format::INVALID )
@@ -192,7 +192,7 @@ struct implementation : instance
         // Crunch the image data and return a pointer to the crunched result array
         crn_comp_params Params;
         Params.clear();
-        Params.m_alpha_component        = m_lSrcBitmaps[0].m_SrcAlpha.hasAlphaChannel() && m_lSrcBitmaps[0].m_SrcAlpha.hasAlphaInfo();
+        Params.m_alpha_component        = m_lSrcBitmaps[0].m_SrcBitmap.hasAlphaChannel() && m_lSrcBitmaps[0].m_SrcBitmap.hasAlphaInfo();
         Params.m_format                 = CompressionOpt.m_ForceCompressionFormat != descriptor::force_compression_format::INVALID 
                                             ? MatchForceCompressionFormat(CompressionOpt.m_ForceCompressionFormat)
                                             : Params.m_alpha_component 
@@ -205,13 +205,15 @@ struct implementation : instance
                                             : CompressionOpt.m_Compression == descriptor::compression::LEVEL_2
                                                 ? crn_dxt_quality::cCRNDXTQualityBetter
                                                 : CompressionOpt.m_Compression == descriptor::compression::LEVEL_Z 
-                                                    ? crn_dxt_quality::cCRNDXTQualityTotal
+                                                    ? crn_dxt_quality::cCRNDXTQualityUber
                                                     : crn_dxt_quality::cCRNDXTQualityFast;
 
-        Params.m_width                  = m_lSrcBitmaps[0].m_SrcAlpha.getWidth();
-        Params.m_height                 = m_lSrcBitmaps[0].m_SrcAlpha.getHeight();
+        Params.m_width                  = m_lSrcBitmaps[0].m_SrcBitmap.getWidth();
+        Params.m_height                 = m_lSrcBitmaps[0].m_SrcBitmap.getHeight();
         Params.m_file_type              = crn_file_type::cCRNFileTypeDDS;
-        Params.m_levels                 = crn_limits::cCRNMaxLevelResolution;
+        Params.m_num_helper_threads     = (CompressionOpt.m_Compression == descriptor::compression::LEVEL_2 
+                                          || CompressionOpt.m_Compression == descriptor::compression::LEVEL_Z) 
+                                              ? std::thread::hardware_concurrency() : std::thread::hardware_concurrency()/2;
 
         Params.m_faces = static_cast<std::uint32_t>(m_lSrcBitmaps.size());
         for (int i = 0; i < m_lSrcBitmaps.size(); ++i)
@@ -223,6 +225,9 @@ struct implementation : instance
         else if(CompressionOpt.m_bEnablePerceptualMetrics) Params.m_flags |= crn_comp_flags::cCRNCompFlagPerceptual;
 
         if(Type == descriptor::type::INTENSITY) Params.m_flags |= crn_comp_flags::cCRNCompFlagGrayscaleSampling;
+
+        if( Params.check() == false )
+            throw(std::runtime_error("Parameters for the compressor (crunch) failed."));
 
         crn_mipmap_params Mipmaps;
         Mipmaps.clear();
@@ -238,6 +243,9 @@ struct implementation : instance
             , &Actual_quality_level
             , &Actual_bitrate
             );
+
+            if( pData == nullptr )
+                throw(std::runtime_error("The compressor (crunch) failed."));
 
             // Convert from DDS format to xcore::bitmap
             if( auto Err = xbmp::tools::loader::LoadDSS(m_FinalBitmap, {reinterpret_cast<std::byte*>(pData), CompressSize } ); Err )
