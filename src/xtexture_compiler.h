@@ -11,6 +11,11 @@ namespace xtexture_compiler
     , SUCCESS   = 0
     , FAILURE
     };
+
+    static constexpr xcore::guid::rcfull<> full_guid_v
+    { .m_Type = xcore::guid::rctype<>         { "resource.pipeline", "plugin" }
+    , .m_Instance = xcore::guid::rcinstance<> { "xtexture" }
+    };
 }
 
 #include "xtexture_compiler_descriptor.h"
