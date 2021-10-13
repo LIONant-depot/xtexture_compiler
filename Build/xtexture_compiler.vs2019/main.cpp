@@ -4,14 +4,9 @@
 
 struct texture_pipeline_compiler : xresource_pipeline::compiler::base
 {
-    static constexpr xcore::guid::rcfull<> full_guid_v
-    { .m_Type = xcore::guid::rctype<>         { "resource.pipeline", "plugin" }
-    , .m_Instance = xcore::guid::rcinstance<> { "xtexture" }
-    };
-
     virtual xcore::guid::rcfull<> getResourcePipelineFullGuid() const noexcept override
     {
-        return full_guid_v;
+        return xtexture_compiler::full_guid_v;
     }
 
     virtual xcore::err onCompile(void) noexcept override
@@ -51,7 +46,7 @@ int main( int argc, const char* argv[] )
         };
         Info.m_ResourceTypes.push_back
         (xresource_pipeline::config::resource_type
-            { .m_FullGuid                = texture_pipeline_compiler::full_guid_v
+            { .m_FullGuid                = xtexture_compiler::full_guid_v
             , .m_ResourceTypeName        = "xtexture"
             , .m_bDefaultSettingInEditor = true
             });
